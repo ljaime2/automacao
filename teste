@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões com Link</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, red, blue);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: lightgray;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: white;
+        }
+
+        iframe {
+            width: 80%;
+            height: 50vh;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Projeto Macrodoid - Automação</h1>
+    <div class="button-container">
+        <button onclick="executarLink('https://trigger.macrodroid.com/79e5398f-9c16-45d3-9e8f-a6c4f590b44e/localiza')">Localiza Celular</button>
+        <button onclick="executarLink('https://trigger.macrodroid.com/79e5398f-9c16-45d3-9e8f-a6c4f590b44e/liga%20camera%20e%20envia%20email')">Envia Foto Camera para e-mail</button>
+        <button onclick="executarLink('http://www.facebook.com')">Botão 3</button>
+        <button onclick="executarLink('http://www.twitter.com')">Botão 4</button>
+        <button onclick="executarLink('http://www.instagram.com')">Botão 5</button>
+        <button onclick="executarLink('http://www.linkedin.com')">Botão 6</button>
+        <button onclick="executarLink('http://www.youtube.com')">Botão 7</button>
+        <button onclick="executarLink('http://www.reddit.com')">Botão 8</button>
+        <button onclick="executarLink('http://www.wikipedia.org')">Botão 9</button>
+        <button onclick="executarLink('http://www.amazon.com')">Botão 10</button>
+        <button onclick="executarLink('http://www.ebay.com')">Botão 11</button>
+        <button onclick="executarLink('http://www.microsoft.com')">Botão 12</button>
+    </div>
+    <div id="message"></div>
+    <iframe id="iframe" src="" style="display: none;"></iframe>
+
+    <script>
+        function executarLink(url) {
+            // Mostra a mensagem "Comando executado" na própria página
+            document.getElementById('message').textContent = 'Comando executado';
+
+            // Carrega o site no iframe
+            var iframe = document.getElementById('iframe');
+            iframe.src = url;
+            iframe.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
